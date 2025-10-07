@@ -10,7 +10,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Primitives;
 using NReco.PdfRenderer;
 
 namespace UvA.DataNose.ScanTool
@@ -28,7 +27,7 @@ namespace UvA.DataNose.ScanTool
             Logger = logger;
             var target = config["TargetPath"] ?? "/files";
             ArchivePath = config["ArchivePath"] ?? "/archive";
-            Client = new HttpClient()
+            Client = new HttpClient
             {
                 BaseAddress = new Uri(config["TargetHost"])
             };

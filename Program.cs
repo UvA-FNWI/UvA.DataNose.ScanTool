@@ -7,7 +7,7 @@ namespace UvA.DataNose.ScanTool
 {
     class Program
     {
-        async static Task Main(string[] args)
+        static async Task Main(string[] args)
         {
             await Host
                 .CreateDefaultBuilder()
